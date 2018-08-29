@@ -10,8 +10,9 @@ module.exports = {
     publicPath: "/"
   },
   devServer: {
-    contentBase: path.join(__dirname, "../dist"),
-    overlay: true
+    contentBase: path.join(__dirname, "../src"),
+    overlay: true,
+    watchContentBase: true
   },
   module: {
     rules: [
