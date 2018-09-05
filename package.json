@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server --config=config/webpack.dev.config.js  --watch --hot",
-    "build": "webpack --config=config/webpack.dev.config.js"
+    "build": "webpack --config=config/webpack.prod.config.js"
   },
   "author": "",
   "license": "ISC",
@@ -15,9 +15,12 @@
     "extract-loader": "^2.0.1",
     "file-loader": "^2.0.0",
     "html-loader": "^0.5.5",
+    "mini-css-extract-plugin": "^0.4.2",
     "node-sass": "^4.9.3",
+    "optimize-css-assets-webpack-plugin": "^5.0.1",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.22.1",
+    "uglifyjs-webpack-plugin": "^1.3.0",
     "webpack": "^4.17.1",
     "webpack-cli": "^3.1.0",
     "webpack-dev-server": "^3.1.6"
