@@ -6,18 +6,18 @@ module.exports = {
   mode: "development",
   output: {
     filename: "script.js",
-    path: path.resolve(__dirname, "../dist"),
-    publicPath: "/"
+    path: path.resolve(__dirname, "../dist/js"),
+    publicPath: "/js"
   },
   devServer: {
-    contentBase: path.join(__dirname, "../src"),
+    contentBase: path.resolve(__dirname, "../src"),
     overlay: true,
     watchContentBase: true
   },
   module: {
     rules: [
       {
-        test: /\.scss$/,
+        test: /\.(sa|sc|c)ss$/,
         use: [
           {
             loader: "style-loader"
