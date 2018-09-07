@@ -1,13 +1,15 @@
 const path = require("path");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 module.exports = {
+  context: path.resolve(__dirname, "../src"),
   entry: {
-    main: ["./src/js/index.js"]
+    main: ["./js/index.js"]
   },
   mode: "development",
   output: {
-    filename: "script.js",
-    path: path.resolve(__dirname, "../dist/js"),
-    publicPath: "/js"
+    filename: "js/[name].js",
+    path: path.resolve(__dirname, "../dist/"),
+    publicPath: "/"
   },
   devServer: {
     contentBase: path.resolve(__dirname, "../src"),
@@ -20,7 +22,7 @@ module.exports = {
         test: /\.(sa|sc|c)ss$/,
         use: [
           {
-            loader: "style-loader"
+            loader: MiniCssExtractPlugin.loader
           },
           {
             loader: "css-loader"
@@ -48,5 +50,10 @@ module.exports = {
         ]
       }
     ]
-  }
+  },
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: "css/[name].css"
+    })
+  ]
 };

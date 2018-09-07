@@ -14,13 +14,14 @@ module.exports = {
       new OptimizeCSSAssetsPlugin({})
     ]
   },
+  context: path.resolve(__dirname, "../src"),
   entry: {
-    main: ["./src/js/index.js"]
+    main: ["./js/index.js"]
   },
   mode: "production",
   output: {
-    filename: "script.js",
-    path: path.resolve(__dirname, "../dist/js"),
+    filename: "js/[name].js",
+    path: path.resolve(__dirname, "../dist/"),
     publicPath: "/"
   },
   module: {
@@ -45,7 +46,7 @@ module.exports = {
           {
             loader: "file-loader",
             options: {
-              name: "../[name].html"
+              name: "[name].html"
             }
           },
           {
@@ -63,7 +64,7 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: "../css/style.css"
+      filename: "css/[name].css"
     })
   ]
 };
