@@ -19,6 +19,37 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.(gif|png|jpe?g|svg)$/i,
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: "images/[name].[ext]"
+            }
+          },
+          {
+            loader: "image-webpack-loader",
+            options: {
+              mozjpeg: {
+                progressive: true,
+                quality: 65
+              },
+              // optipng.enabled: false will disable optipng
+              optipng: {
+                enabled: false
+              },
+              pngquant: {
+                quality: "65-90",
+                speed: 4
+              },
+              gifsicle: {
+                interlaced: false
+              }
+            }
+          }
+        ]
+      },
+      {
         test: /\.(sa|sc|c)ss$/,
         use: [
           {
@@ -26,6 +57,14 @@ module.exports = {
           },
           {
             loader: "css-loader"
+          },
+          {
+            loader: "postcss-loader",
+            options: {
+              config: {
+                path: path.resolve(__dirname)
+              }
+            }
           },
           {
             loader: "sass-loader"
@@ -45,7 +84,10 @@ module.exports = {
             loader: "extract-loader"
           },
           {
-            loader: "html-loader"
+            loader: "html-loader",
+            options: {
+              attrs: ["img: src"]
+            }
           }
         ]
       }
