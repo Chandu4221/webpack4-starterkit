@@ -9,11 +9,7 @@
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "braces": "^2.3.1",
-    "browserslist": "^4.6.3",
-    "caniuse-lite": "^1.0.30000978"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@babel/core": "^7.4.5",
     "@fullhuman/postcss-purgecss": "^1.2.0",
@@ -22,6 +18,9 @@
     "babel-core": "^6.26.3",
     "babel-loader": "^8.0.6",
     "babel-plugin-transform-es2015-arrow-functions": "^6.22.0",
+    "braces": "^2.3.2",
+    "browserslist": "^4.6.3",
+    "caniuse-lite": "^1.0.30000978",
     "css-loader": "^1.0.1",
     "extract-loader": "^2.0.1",
     "file-loader": "^2.0.0",
